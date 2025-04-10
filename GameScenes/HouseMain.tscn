@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bodacl5i2ncn0"]
+
+[ext_resource type="PackedScene" uid="uid://b3c8sbd8368vq" path="res://Assets/UI/Flechas de navegacion/FlechasNavegacion.tscn" id="1_d4m50"]
+[ext_resource type="PackedScene" uid="uid://dfrikgbcgjsci" path="res://Assets/Puerta.tscn" id="2_noxm1"]
+[ext_resource type="Texture2D" uid="uid://bx6tbo860fah6" path="res://Assets/Sprites/png-clipart-table-wood-furniture-table-angle-rectangle-thumbnail.png" id="3_fle3p"]
+[ext_resource type="PackedScene" uid="uid://m6mllmxfhqt4" path="res://Assets/Mate.tscn" id="4_pvfdy"]
+
+[node name="DentroDeLaCasa" type="Node2D"]
+
+[node name="FlechaNavegacion" parent="." instance=ExtResource("1_d4m50")]
+
+[node name="Puerta" parent="." instance=ExtResource("2_noxm1")]
+position = Vector2(846, 462)
+scale = Vector2(0.719999, 0.719999)
+text = "Salir afuera"
+
+[node name="Png-clipart-table-wood-furniture-table-angle-rectangle-thumbnail" type="Sprite2D" parent="."]
+position = Vector2(386, 552)
+texture = ExtResource("3_fle3p")
+
+[node name="Mate" parent="." instance=ExtResource("4_pvfdy")]
+position = Vector2(419, 423)
+scale = Vector2(0.239999, 0.239999)

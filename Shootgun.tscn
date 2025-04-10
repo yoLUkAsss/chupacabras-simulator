@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ifsswi1qwe1p"]
+
+[ext_resource type="ArrayMesh" uid="uid://buq54yiicxywk" path="res://Assets/slsna3l82hog-Shotgun/Shotgun.obj" id="1_ak4um"]
+
+[node name="Shootgun" type="Node3D"]
+
+[node name="Shotgun" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_ak4um")
