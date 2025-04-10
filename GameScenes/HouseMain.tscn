@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bodacl5i2ncn0"]
 
 [ext_resource type="PackedScene" uid="uid://b3c8sbd8368vq" path="res://Assets/UI/Flechas de navegacion/FlechasNavegacion.tscn" id="1_d4m50"]
-[ext_resource type="PackedScene" uid="uid://dfrikgbcgjsci" path="res://Assets/Puerta.tscn" id="2_noxm1"]
+[ext_resource type="PackedScene" uid="uid://dfrikgbcgjsci" path="res://Assets/Prefabs/Puerta.tscn" id="2_noxm1"]
 [ext_resource type="Texture2D" uid="uid://bx6tbo860fah6" path="res://Assets/Sprites/png-clipart-table-wood-furniture-table-angle-rectangle-thumbnail.png" id="3_fle3p"]
-[ext_resource type="PackedScene" uid="uid://m6mllmxfhqt4" path="res://Assets/Mate.tscn" id="4_pvfdy"]
+[ext_resource type="PackedScene" uid="uid://m6mllmxfhqt4" path="res://Assets/Prefabs/Mate.tscn" id="4_pvfdy"]
 
 [node name="DentroDeLaCasa" type="Node2D"]
 

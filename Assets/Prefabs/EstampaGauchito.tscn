@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5nq24m1twkon"]
+
+[ext_resource type="Script" uid="uid://b84cdefgx1jxq" path="res://_Scripts/TextOnOverlap.gd" id="1_xf686"]
+[ext_resource type="Texture2D" uid="uid://dkg6l825vndv6" path="res://Assets/Sprites/0dc92a82e0b805baafadc53428d7f7a1.jpg" id="2_xf686"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_heaug"]
+size = Vector2(230.5, 302.5)
+
+[node name="Estampa gauchito" type="Area2D"]
+script = ExtResource("1_xf686")
+text = "Rezarle al gauchito"
+
+[node name="Gratis-png-iconos-de-ordenador-mate-bigmidin-thumbnail" type="Sprite2D" parent="."]
+position = Vector2(-57.5, -15)
+scale = Vector2(0.310667, 0.310667)
+texture = ExtResource("2_xf686")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = 103.0
+offset_top = -151.0
+offset_right = 198.0
+offset_bottom = -128.0
+scale = Vector2(3.08, 3.08)
+text = "Tomar Mate"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-59, -18)
+shape = SubResource("RectangleShape2D_heaug")

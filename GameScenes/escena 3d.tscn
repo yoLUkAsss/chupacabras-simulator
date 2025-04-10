@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bxcc5dx42o1ky"]
 
 [ext_resource type="Script" uid="uid://m7qgt0u4bg2e" path="res://_Scripts/Player.gd" id="1_o8wd6"]
-[ext_resource type="Texture2D" uid="uid://dbqseq4cj8ptg" path="res://Assets/NightSkyHDRI016A_1K-HDR.exr" id="1_rmlu5"]
-[ext_resource type="PackedScene" uid="uid://dv7h4qmdqa7yx" path="res://Assets/Lantern.FBX" id="3_t66o6"]
+[ext_resource type="Texture2D" uid="uid://dbqseq4cj8ptg" path="res://Assets/Sky/NightSkyHDRI016A_1K-HDR.exr" id="1_rmlu5"]
+[ext_resource type="PackedScene" uid="uid://dv7h4qmdqa7yx" path="res://Assets/Prefabs/Lantern.FBX" id="3_t66o6"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_t66o6"]
 panorama = ExtResource("1_rmlu5")
