@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://cum6gfjua30b4"]
+
+[ext_resource type="PackedScene" uid="uid://bex6ujfllncpi" path="res://Mate.tscn" id="1_tfvkg"]
+[ext_resource type="Texture2D" uid="uid://d0y6cdg4u8t2t" path="res://Assets/Sprites/Escena1/Garrafa.png" id="2_qgla2"]
+[ext_resource type="Texture2D" uid="uid://clqeit11eam6q" path="res://Assets/Sprites/Escena1/Pava.png" id="3_wrtsc"]
+[ext_resource type="Script" uid="uid://b1iys866rjwk3" path="res://GameScenes/pava.gd" id="4_270lj"]
+[ext_resource type="FontFile" uid="uid://lfv4nmtl41k4" path="res://Pretty Single.ttf" id="5_fqgni"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e254n"]
+size = Vector2(150, 133.5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Mate" parent="." instance=ExtResource("1_tfvkg")]
+position = Vector2(743, 650)
+scale = Vector2(1.21932, 1.21932)
+
+[node name="Garrafa" type="Sprite2D" parent="."]
+position = Vector2(523, 657)
+texture = ExtResource("2_qgla2")
+
+[node name="Pava" type="Sprite2D" parent="."]
+position = Vector2(523, 503)
+texture = ExtResource("3_wrtsc")
+script = ExtResource("4_270lj")
+
+[node name="Area2D" type="Area2D" parent="Pava"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pava/Area2D"]
+position = Vector2(1, -1.75)
+shape = SubResource("RectangleShape2D_e254n")
+
+[node name="Panel" type="Panel" parent="Pava"]
+offset_left = -79.0
+offset_top = -73.0
+offset_right = 81.0
+offset_bottom = 69.0
+
+[node name="Label" type="Label" parent="Pava"]
+offset_left = 90.0
+offset_top = -91.0
+offset_right = 238.0
+offset_bottom = -2.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("5_fqgni")
+theme_override_font_sizes/font_size = 70
+text = "Pava"
+
+[connection signal="input_event" from="Pava/Area2D" to="Pava" method="_on_area_2d_input_event"]
+[connection signal="mouse_shape_entered" from="Pava/Area2D" to="Pava" method="_on_area_2d_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="Pava/Area2D" to="Pava" method="_on_area_2d_mouse_shape_exited"]
