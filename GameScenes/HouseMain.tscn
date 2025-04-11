@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://donciua6o0as5" path="res://Assets/Sprites/Escena1/Mesa.png" id="2_d4m50"]
 [ext_resource type="Texture2D" uid="uid://bc6srrojt845l" path="res://Assets/Sprites/Escena1/Garrafa y pava.png" id="4_fle3p"]
 [ext_resource type="FontFile" uid="uid://lfv4nmtl41k4" path="res://Pretty Single.ttf" id="4_noxm1"]
-[ext_resource type="Script" uid="uid://dpu0e6ewl7axo" path="res://GameScenes/garrafa_y_pava.gd" id="6_fle3p"]
-[ext_resource type="PackedScene" uid="uid://2wovex2i1evu" path="res://Mate.tscn" id="6_pvfdy"]
+[ext_resource type="Script" path="res://GameScenes/garrafa_y_pava.gd" id="6_fle3p"]
+[ext_resource type="PackedScene" path="res://Mate.tscn" id="6_pvfdy"]
 
 [node name="DentroDeLaCasa" type="Node2D"]
 
