@@ -54,13 +54,13 @@ offset_right = 81.0
 offset_bottom = 69.0
 
 [node name="Label" type="Label" parent="Pava"]
-offset_left = 92.0
-offset_top = -67.0
-offset_right = 291.0
-offset_bottom = -6.0
+offset_left = 90.0
+offset_top = -91.0
+offset_right = 238.0
+offset_bottom = -2.0
 scale = Vector2(0.5, 0.5)
 theme_override_fonts/font = ExtResource("4_noxm1")
-theme_override_font_sizes/font_size = 55
+theme_override_font_sizes/font_size = 70
 text = "Pava"
 
 [connection signal="input_event" from="Pava/Area2D" to="Pava" method="_on_area_2d_input_event"]
