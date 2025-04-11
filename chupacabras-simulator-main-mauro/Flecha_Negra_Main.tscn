@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://bssrdm8gpvavu"]
+
+[ext_resource type="Script" uid="uid://dimapo17x0v8h" path="res://_Scripts/Flechas/flecha_living.gd" id="1_hkt84"]
+[ext_resource type="Texture2D" uid="uid://dqg7he0v5f71r" path="res://Assets/UI/Flechas de navegacion/flecha-negra-izquierda.png" id="2_dcnhb"]
+[ext_resource type="FontFile" uid="uid://lfv4nmtl41k4" path="res://Pretty Single.ttf" id="3_nuo07"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xihap"]
+
+[node name="flecha_negra_main" type="Sprite2D"]
+position = Vector2(60, 469)
+script = ExtResource("1_hkt84")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("2_dcnhb")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(6.2, 6.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_xihap")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -71.0
+offset_top = -65.0
+offset_right = -31.0
+offset_bottom = -25.0
+scale = Vector2(3.51328, 3.47815)
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = -15.0
+offset_top = -99.0
+offset_right = 103.0
+offset_bottom = -36.0
+scale = Vector2(1.05279, 1.05279)
+theme_override_fonts/font = ExtResource("3_nuo07")
+theme_override_font_sizes/font_size = 56
+text = "Living"
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_shape_entered" from="Area2D" to="." method="_on_area_2d_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="Area2D" to="." method="_on_area_2d_mouse_shape_exited"]

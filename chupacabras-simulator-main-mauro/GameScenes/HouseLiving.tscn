@@ -1,0 +1,153 @@
+[gd_scene load_steps=15 format=3 uid="uid://bwffbpshtgtv3"]
+
+[ext_resource type="Texture2D" uid="uid://dqg7he0v5f71r" path="res://Assets/UI/Flechas de navegacion/flecha-negra-izquierda.png" id="2_vvy8n"]
+[ext_resource type="Script" uid="uid://dimapo17x0v8h" path="res://_Scripts/Flechas/flecha_living.gd" id="4_qnjcs"]
+[ext_resource type="Texture2D" uid="uid://bgfsx0uwubb4d" path="res://Assets/Sprites/houseliving-interior.png" id="4_vvy8n"]
+[ext_resource type="FontFile" uid="uid://lfv4nmtl41k4" path="res://Pretty Single.ttf" id="5_4uqww"]
+[ext_resource type="Texture2D" uid="uid://dmxvwohprebl3" path="res://Assets/Sprites/klipartz.com (1).png" id="5_qnjcs"]
+[ext_resource type="Script" uid="uid://b5s852yek5yed" path="res://GameScenes/radio.gd" id="6_4uqww"]
+[ext_resource type="Texture2D" uid="uid://di6kujyq6vuq3" path="res://Assets/Sprites/Escena1/Mate.png" id="6_gsndr"]
+[ext_resource type="Script" uid="uid://b2nfnmw2q0fqg" path="res://mate.gd" id="8_b1ivl"]
+[ext_resource type="AudioStream" uid="uid://ciwbygn4pxfm1" path="res://SFX/RuidoMate-[AudioTrimmer.com].mp3" id="9_7oyux"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_spwok"]
+size = Vector2(20, 17.0968)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_583mg"]
+bg_color = Color(0, 0, 0, 0.294118)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qnjcs"]
+size = Vector2(278.904, 319.989)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjvw1"]
+size = Vector2(108.923, 175.122)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8hm7"]
+bg_color = Color(0, 0, 0, 0.294118)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="HouseDormitory" type="Node2D"]
+
+[node name="Houseliving-interior" type="Sprite2D" parent="."]
+position = Vector2(958.5, 510)
+scale = Vector2(1.26558, 1.26558)
+texture = ExtResource("4_vvy8n")
+
+[node name="Flecha_Living" type="Sprite2D" parent="."]
+position = Vector2(152, 589)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("2_vvy8n")
+script = ExtResource("4_qnjcs")
+
+[node name="Area2D" type="Area2D" parent="Flecha_Living"]
+position = Vector2(0.000488281, 0.000244141)
+scale = Vector2(25.8333, 25.8333)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flecha_Living/Area2D"]
+position = Vector2(0, 0.161278)
+shape = SubResource("RectangleShape2D_spwok")
+
+[node name="Panel" type="Panel" parent="Flecha_Living"]
+offset_left = -329.167
+offset_top = -270.833
+offset_right = 380.833
+offset_bottom = 263.167
+scale = Vector2(0.920012, 1.02298)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_583mg")
+
+[node name="Label" type="Label" parent="Flecha_Living"]
+modulate = Color(0, 0, 0, 1)
+offset_left = -154.167
+offset_top = -500.0
+offset_right = -36.1664
+offset_bottom = -437.0
+scale = Vector2(2.66496, 2.91168)
+theme_override_fonts/font = ExtResource("5_4uqww")
+theme_override_font_sizes/font_size = 56
+text = "Living"
+
+[node name="Radio" type="Sprite2D" parent="."]
+position = Vector2(594, 558)
+scale = Vector2(0.453141, 0.453141)
+texture = ExtResource("5_qnjcs")
+script = ExtResource("6_4uqww")
+
+[node name="Area2D" type="Area2D" parent="Radio"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Radio/Area2D"]
+position = Vector2(10.6117, 1.10339)
+shape = SubResource("RectangleShape2D_qnjcs")
+
+[node name="Label" type="Label" parent="Radio"]
+modulate = Color(0, 0, 0, 1)
+offset_left = -399.434
+offset_top = -94.8932
+offset_right = -281.434
+offset_bottom = -31.8932
+scale = Vector2(1.71617, 1.87505)
+theme_override_fonts/font = ExtResource("5_4uqww")
+theme_override_font_sizes/font_size = 56
+text = "Radio"
+
+[node name="Panel" type="Panel" parent="Radio"]
+offset_left = -172.0
+offset_top = -181.0
+offset_right = 194.0
+offset_bottom = 192.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_583mg")
+
+[node name="Mate" type="Sprite2D" parent="."]
+position = Vector2(772, 560)
+scale = Vector2(0.798077, 0.798077)
+texture = ExtResource("6_gsndr")
+script = ExtResource("8_b1ivl")
+
+[node name="Area2D" type="Area2D" parent="Mate"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mate/Area2D"]
+position = Vector2(-0.581665, 1.10297)
+shape = SubResource("RectangleShape2D_hjvw1")
+
+[node name="Panel" type="Panel" parent="Mate"]
+offset_left = -65.1567
+offset_top = -95.2289
+offset_right = 79.8433
+offset_bottom = 97.7711
+scale = Vector2(0.920012, 1.02298)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k8hm7")
+
+[node name="Label" type="Label" parent="Mate"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 86.4578
+offset_top = -48.8674
+offset_right = 289.458
+offset_bottom = 14.1326
+scale = Vector2(0.801755, 0.875981)
+theme_override_fonts/font = ExtResource("5_4uqww")
+theme_override_font_sizes/font_size = 56
+text = "Mate frío"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Mate"]
+stream = ExtResource("9_7oyux")
+
+[node name="MateHolder" type="Node2D" parent="."]
+position = Vector2(1268, 935)
+
+[connection signal="input_event" from="Flecha_Living/Area2D" to="Flecha_Living" method="_on_area_2d_input_event"]
+[connection signal="mouse_shape_entered" from="Flecha_Living/Area2D" to="Flecha_Living" method="_on_area_2d_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="Flecha_Living/Area2D" to="Flecha_Living" method="_on_area_2d_mouse_shape_exited"]
+[connection signal="input_event" from="Radio/Area2D" to="Radio" method="_on_area_2d_input_event"]
+[connection signal="mouse_shape_entered" from="Radio/Area2D" to="Radio" method="_on_area_2d_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="Radio/Area2D" to="Radio" method="_on_area_2d_mouse_shape_exited"]
+[connection signal="input_event" from="Mate/Area2D" to="Mate" method="_on_area_2d_input_event"]
+[connection signal="mouse_shape_entered" from="Mate/Area2D" to="Mate" method="_on_area_2d_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="Mate/Area2D" to="Mate" method="_on_area_2d_mouse_shape_exited"]
