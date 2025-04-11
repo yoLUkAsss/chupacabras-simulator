@@ -3,11 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://b5nq24m1twkon" path="res://Assets/Prefabs/EstampaGauchito.tscn" id="1_ij5jv"]
 [ext_resource type="Texture2D" uid="uid://bbxdnhdn3ip7q" path="res://Assets/Sprites/klipartz.com.png" id="2_w06ue"]
 [ext_resource type="Texture2D" uid="uid://dqg7he0v5f71r" path="res://Assets/UI/Flechas de navegacion/flecha-negra-izquierda.png" id="3_2jqt0"]
-[ext_resource type="Script" uid="uid://dimapo17x0v8h" path="res://GameScenes/flecha_negra_A_Main.gd" id="4_b5lai"]
+[ext_resource type="Script" uid="uid://dimapo17x0v8h" path="res://GameScenes/flecha_living.gd" id="4_b5lai"]
 [ext_resource type="FontFile" uid="uid://lfv4nmtl41k4" path="res://Pretty Single.ttf" id="5_2hbxv"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u3obj"]
-size = Vector2(53.5562, 53.2041)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5lai"]
 
 [node name="HouseDormitory" type="Node2D"]
 
@@ -21,42 +20,40 @@ position = Vector2(902, 469)
 scale = Vector2(0.28, 0.28)
 texture = ExtResource("2_w06ue")
 
-[node name="Flecha-negra-A_Main" type="Sprite2D" parent="."]
-position = Vector2(1818, 497)
+[node name="Flecha_Living" type="Sprite2D" parent="."]
+position = Vector2(1829, 612)
 rotation = -3.14159
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.24, 0.24)
 texture = ExtResource("3_2jqt0")
 script = ExtResource("4_b5lai")
 
-[node name="Area2D" type="Area2D" parent="Flecha-negra-A_Main"]
-position = Vector2(5.00702, -0.0128174)
+[node name="Area2D" type="Area2D" parent="Flecha_Living"]
+position = Vector2(0.000488281, 0.000244141)
+scale = Vector2(25.8333, 25.8333)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flecha-negra-A_Main/Area2D"]
-visible = false
-position = Vector2(-157.246, 5.00562)
-scale = Vector2(15.6004, 17.5897)
-shape = SubResource("RectangleShape2D_u3obj")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flecha_Living/Area2D"]
+shape = SubResource("RectangleShape2D_b5lai")
 
-[node name="Label" type="Label" parent="Flecha-negra-A_Main"]
-modulate = Color(0, 0, 0, 1)
-offset_left = 185.004
-offset_top = 884.999
-offset_right = 476.004
-offset_bottom = 1068.0
-scale = Vector2(-2.91416, -2.93304)
-theme_override_fonts/font = ExtResource("5_2hbxv")
-theme_override_font_sizes/font_size = 81
-text = "Living
-"
-
-[node name="Panel" type="Panel" parent="Flecha-negra-A_Main"]
-offset_left = -975.0
-offset_top = -535.0
-offset_right = -935.0
-offset_bottom = -495.0
-scale = Vector2(29.6602, 28.4759)
+[node name="Panel" type="Panel" parent="Flecha_Living"]
+offset_left = -287.5
+offset_top = -283.333
+offset_right = -247.5
+offset_bottom = -243.333
+scale = Vector2(14.9491, 14.7996)
 mouse_filter = 2
 
-[connection signal="input_event" from="Flecha-negra-A_Main/Area2D" to="Flecha-negra-A_Main" method="_on_area_2d_input_event"]
-[connection signal="mouse_shape_entered" from="Flecha-negra-A_Main/Area2D" to="Flecha-negra-A_Main" method="_on_area_2d_mouse_shape_entered"]
-[connection signal="mouse_shape_exited" from="Flecha-negra-A_Main/Area2D" to="Flecha-negra-A_Main" method="_on_area_2d_mouse_shape_exited"]
+[node name="Label" type="Label" parent="Flecha_Living"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 170.835
+offset_top = 541.665
+offset_right = 288.835
+offset_bottom = 604.665
+rotation = -3.14159
+scale = Vector2(2.66496, 2.91168)
+theme_override_fonts/font = ExtResource("5_2hbxv")
+theme_override_font_sizes/font_size = 56
+text = "Living"
+
+[connection signal="input_event" from="Flecha_Living/Area2D" to="Flecha_Living" method="_on_area_2d_input_event"]
+[connection signal="mouse_shape_entered" from="Flecha_Living/Area2D" to="Flecha_Living" method="_on_area_2d_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="Flecha_Living/Area2D" to="Flecha_Living" method="_on_area_2d_mouse_shape_exited"]

@@ -1,4 +1,4 @@
-extends Node2D
+extends Sprite2D
 
 @onready var label = $Label
 @onready var panel = $Panel
