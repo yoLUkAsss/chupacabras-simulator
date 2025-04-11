@@ -1,11 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3ovmihavj4xk"]
+[gd_scene load_steps=8 format=3 uid="uid://c3ovmihavj4xk"]
 
 [ext_resource type="Texture2D" uid="uid://bbxdnhdn3ip7q" path="res://Assets/Sprites/klipartz.com.png" id="2_w06ue"]
 [ext_resource type="Texture2D" uid="uid://dqg7he0v5f71r" path="res://Assets/UI/Flechas de navegacion/flecha-negra-izquierda.png" id="3_2jqt0"]
 [ext_resource type="Script" uid="uid://dimapo17x0v8h" path="res://_Scripts/Flechas/flecha_living.gd" id="4_b5lai"]
 [ext_resource type="FontFile" uid="uid://lfv4nmtl41k4" path="res://Pretty Single.ttf" id="5_2hbxv"]
+[ext_resource type="Texture2D" uid="uid://dkg6l825vndv6" path="res://Assets/Sprites/0dc92a82e0b805baafadc53428d7f7a1.jpg" id="5_b5lai"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5lai"]
+size = Vector2(20, 17.0968)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_583mg"]
+bg_color = Color(0, 0, 0, 0.294118)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="HouseDormitory" type="Node2D"]
 
@@ -15,7 +24,7 @@ scale = Vector2(0.28, 0.28)
 texture = ExtResource("2_w06ue")
 
 [node name="Flecha_Living" type="Sprite2D" parent="."]
-position = Vector2(1829, 612)
+position = Vector2(1774, 589)
 rotation = -3.14159
 scale = Vector2(0.24, 0.24)
 texture = ExtResource("3_2jqt0")
@@ -26,27 +35,34 @@ position = Vector2(0.000488281, 0.000244141)
 scale = Vector2(25.8333, 25.8333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flecha_Living/Area2D"]
+position = Vector2(0, 0.161278)
 shape = SubResource("RectangleShape2D_b5lai")
-
-[node name="Panel" type="Panel" parent="Flecha_Living"]
-offset_left = -287.5
-offset_top = -283.333
-offset_right = -247.5
-offset_bottom = -243.333
-scale = Vector2(14.9491, 14.7996)
-mouse_filter = 2
 
 [node name="Label" type="Label" parent="Flecha_Living"]
 modulate = Color(0, 0, 0, 1)
-offset_left = 170.835
-offset_top = 541.665
-offset_right = 288.835
-offset_bottom = 604.665
+offset_left = 150.001
+offset_top = 520.833
+offset_right = 268.001
+offset_bottom = 583.833
 rotation = -3.14159
 scale = Vector2(2.66496, 2.91168)
 theme_override_fonts/font = ExtResource("5_2hbxv")
 theme_override_font_sizes/font_size = 56
 text = "Living"
+
+[node name="Panel" type="Panel" parent="Flecha_Living"]
+offset_left = -329.0
+offset_top = -267.0
+offset_right = 381.0
+offset_bottom = 259.0
+scale = Vector2(0.920012, 1.02298)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_583mg")
+
+[node name="GauchitoGil" type="Sprite2D" parent="."]
+position = Vector2(348, 390)
+scale = Vector2(0.392873, 0.392873)
+texture = ExtResource("5_b5lai")
 
 [connection signal="input_event" from="Flecha_Living/Area2D" to="Flecha_Living" method="_on_area_2d_input_event"]
 [connection signal="mouse_shape_entered" from="Flecha_Living/Area2D" to="Flecha_Living" method="_on_area_2d_mouse_shape_entered"]

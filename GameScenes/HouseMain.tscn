@@ -1,19 +1,45 @@
-[gd_scene load_steps=9 format=3 uid="uid://bodacl5i2ncn0"]
+[gd_scene load_steps=19 format=3 uid="uid://bodacl5i2ncn0"]
 
 [ext_resource type="Texture2D" uid="uid://h8yekrx1n2gf" path="res://Assets/Sprites/Escena1/Interior cabaña 1.png" id="1_colfn"]
 [ext_resource type="Texture2D" uid="uid://donciua6o0as5" path="res://Assets/Sprites/Escena1/Mesa.png" id="2_d4m50"]
 [ext_resource type="FontFile" uid="uid://lfv4nmtl41k4" path="res://Pretty Single.ttf" id="4_noxm1"]
 [ext_resource type="Texture2D" uid="uid://dqg7he0v5f71r" path="res://Assets/UI/Flechas de navegacion/flecha-negra-izquierda.png" id="6_pvfdy"]
 [ext_resource type="Script" uid="uid://4drpnkiyooj4" path="res://_Scripts/Flechas/flecha_cocina.gd" id="7_wuit4"]
+[ext_resource type="Texture2D" uid="uid://di6kujyq6vuq3" path="res://Assets/Sprites/Escena1/Mate.png" id="8_c8406"]
 [ext_resource type="Script" uid="uid://2snvt7w13w6n" path="res://_Scripts/Flechas/flecha_pieza.gd" id="8_wuit4"]
+[ext_resource type="Texture2D" uid="uid://d0y6cdg4u8t2t" path="res://Assets/Sprites/Escena1/Garrafa.png" id="9_0xmua"]
+[ext_resource type="Script" uid="uid://b2nfnmw2q0fqg" path="res://mate.gd" id="9_583mg"]
 [ext_resource type="Script" uid="uid://bvkxjk1t7tegy" path="res://_Scripts/Flechas/SalirAfuera.gd" id="9_mt05b"]
+[ext_resource type="Texture2D" uid="uid://clqeit11eam6q" path="res://Assets/Sprites/Escena1/Pava.png" id="10_583mg"]
+[ext_resource type="Script" uid="uid://cq50esh08nr8q" path="res://GameScenes/pava.gd" id="12_583mg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvfdy"]
+size = Vector2(20, 17.0968)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_583mg"]
+bg_color = Color(0, 0, 0, 0.294118)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wuit4"]
+size = Vector2(20, 17.2581)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mt05b"]
+size = Vector2(9.67743, 15.0528)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8406"]
+size = Vector2(108.923, 175.122)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xmua"]
+size = Vector2(156.5, 138.25)
 
 [node name="DentroDeLaCasa" type="Node2D"]
 
 [node name="InteriorCabaña1" type="Sprite2D" parent="."]
-position = Vector2(965, 534)
+position = Vector2(962, 537.5)
+scale = Vector2(1.00312, 1.00648)
 texture = ExtResource("1_colfn")
 
 [node name="Mesa" type="Sprite2D" parent="."]
@@ -32,22 +58,24 @@ position = Vector2(0.000488281, 0.000244141)
 scale = Vector2(25.8333, 25.8333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flecha_Cocina/Area2D"]
+position = Vector2(0, -0.161301)
 shape = SubResource("RectangleShape2D_pvfdy")
 
 [node name="Panel" type="Panel" parent="Flecha_Cocina"]
-offset_left = -287.5
-offset_top = -283.333
-offset_right = -247.5
-offset_bottom = -243.333
-scale = Vector2(14.9491, 14.7996)
+offset_left = -310.0
+offset_top = -275.0
+offset_right = 357.0
+offset_bottom = 249.0
+scale = Vector2(0.920012, 1.02298)
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_583mg")
 
 [node name="Label" type="Label" parent="Flecha_Cocina"]
 modulate = Color(0, 0, 0, 1)
-offset_left = 158.332
-offset_top = 483.333
-offset_right = 276.332
-offset_bottom = 546.333
+offset_left = 179.165
+offset_top = 470.834
+offset_right = 314.165
+offset_bottom = 533.834
 rotation = -3.14159
 scale = Vector2(2.66496, 2.91168)
 theme_override_fonts/font = ExtResource("4_noxm1")
@@ -55,7 +83,7 @@ theme_override_font_sizes/font_size = 56
 text = "Cocina"
 
 [node name="Flecha_Pieza" type="Sprite2D" parent="."]
-position = Vector2(203, 589)
+position = Vector2(152, 589)
 scale = Vector2(0.24, 0.24)
 texture = ExtResource("6_pvfdy")
 script = ExtResource("8_wuit4")
@@ -65,26 +93,28 @@ position = Vector2(0.000488281, 0.000244141)
 scale = Vector2(25.8333, 25.8333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flecha_Pieza/Area2D"]
-shape = SubResource("RectangleShape2D_pvfdy")
-
-[node name="Panel" type="Panel" parent="Flecha_Pieza"]
-offset_left = -287.5
-offset_top = -283.333
-offset_right = -247.5
-offset_bottom = -243.333
-scale = Vector2(14.9491, 14.7996)
-mouse_filter = 2
+position = Vector2(0, -0.0806503)
+shape = SubResource("RectangleShape2D_wuit4")
 
 [node name="Label" type="Label" parent="Flecha_Pieza"]
 modulate = Color(0, 0, 0, 1)
-offset_left = -158.334
-offset_top = -483.333
-offset_right = -40.3337
-offset_bottom = -420.333
+offset_left = -154.167
+offset_top = -491.667
+offset_right = -36.1664
+offset_bottom = -428.667
 scale = Vector2(2.66496, 2.91168)
 theme_override_fonts/font = ExtResource("4_noxm1")
 theme_override_font_sizes/font_size = 56
 text = "Pieza"
+
+[node name="Panel" type="Panel" parent="Flecha_Pieza"]
+offset_left = -329.167
+offset_top = -275.0
+offset_right = 380.833
+offset_bottom = 259.0
+scale = Vector2(0.920012, 1.02298)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_583mg")
 
 [node name="Puerta" type="Sprite2D" parent="."]
 position = Vector2(1058, 568)
@@ -96,26 +126,96 @@ position = Vector2(0.000488281, 0.000244141)
 scale = Vector2(25.8333, 47.3333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Puerta/Area2D"]
-shape = SubResource("RectangleShape2D_pvfdy")
+position = Vector2(1.77417, 0.748234)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_mt05b")
 
 [node name="Panel" type="Panel" parent="Puerta"]
-offset_left = -308.333
-offset_top = -524.999
-offset_right = -268.333
-offset_bottom = -484.999
-scale = Vector2(14.9491, 27.1168)
+offset_left = -121.0
+offset_top = -358.0
+offset_right = 246.0
+offset_bottom = 412.0
+scale = Vector2(0.920012, 1.02298)
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_583mg")
 
 [node name="Label" type="Label" parent="Puerta"]
 modulate = Color(0, 0, 0, 1)
-offset_left = -158.333
-offset_top = -729.166
-offset_right = -40.3332
-offset_bottom = -666.166
+offset_left = -87.4999
+offset_top = -583.333
+offset_right = 30.4999
+offset_bottom = -520.333
 scale = Vector2(2.66496, 2.91168)
 theme_override_fonts/font = ExtResource("4_noxm1")
 theme_override_font_sizes/font_size = 56
 text = "Salir"
+
+[node name="Mate" type="Sprite2D" parent="."]
+position = Vector2(765, 664)
+scale = Vector2(0.798077, 0.798077)
+texture = ExtResource("8_c8406")
+script = ExtResource("9_583mg")
+
+[node name="Area2D" type="Area2D" parent="Mate"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mate/Area2D"]
+position = Vector2(-0.581665, 1.10297)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_c8406")
+
+[node name="Panel" type="Panel" parent="Mate"]
+offset_left = -65.1567
+offset_top = -95.2289
+offset_right = 79.8433
+offset_bottom = 97.7711
+scale = Vector2(0.920012, 1.02298)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_583mg")
+
+[node name="Label" type="Label" parent="Mate"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 86.4578
+offset_top = -48.8674
+offset_right = 289.458
+offset_bottom = 14.1326
+scale = Vector2(0.801755, 0.875981)
+theme_override_fonts/font = ExtResource("4_noxm1")
+theme_override_font_sizes/font_size = 56
+text = "Mate frío"
+
+[node name="Garrafa" type="Sprite2D" parent="."]
+position = Vector2(548, 655)
+texture = ExtResource("9_0xmua")
+
+[node name="Pava" type="Sprite2D" parent="."]
+position = Vector2(546, 500)
+texture = ExtResource("10_583mg")
+script = ExtResource("12_583mg")
+
+[node name="Area2D" type="Area2D" parent="Pava"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pava/Area2D"]
+position = Vector2(-1.25, -0.875)
+shape = SubResource("RectangleShape2D_0xmua")
+
+[node name="Panel" type="Panel" parent="Pava"]
+offset_left = -92.0
+offset_top = -80.0
+offset_right = 89.0
+offset_bottom = 80.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_583mg")
+
+[node name="Label" type="Label" parent="Pava"]
+modulate = Color(0, 0, 0, 1)
+offset_left = -36.0
+offset_top = -128.0
+offset_right = 81.9998
+offset_bottom = -65.0
+scale = Vector2(0.63844, 0.697547)
+theme_override_fonts/font = ExtResource("4_noxm1")
+theme_override_font_sizes/font_size = 56
+text = "Pava"
 
 [connection signal="input_event" from="Flecha_Cocina/Area2D" to="Flecha_Cocina" method="_on_area_2d_input_event"]
 [connection signal="mouse_shape_entered" from="Flecha_Cocina/Area2D" to="Flecha_Cocina" method="_on_area_2d_mouse_shape_entered"]
@@ -126,3 +226,9 @@ text = "Salir"
 [connection signal="input_event" from="Puerta/Area2D" to="Puerta" method="_on_area_2d_input_event"]
 [connection signal="mouse_shape_entered" from="Puerta/Area2D" to="Puerta" method="_on_area_2d_mouse_shape_entered"]
 [connection signal="mouse_shape_exited" from="Puerta/Area2D" to="Puerta" method="_on_area_2d_mouse_shape_exited"]
+[connection signal="input_event" from="Mate/Area2D" to="Mate" method="_on_area_2d_input_event"]
+[connection signal="mouse_shape_entered" from="Mate/Area2D" to="Mate" method="_on_area_2d_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="Mate/Area2D" to="Mate" method="_on_area_2d_mouse_shape_exited"]
+[connection signal="input_event" from="Pava/Area2D" to="Pava" method="_on_area_2d_input_event"]
+[connection signal="mouse_shape_entered" from="Pava/Area2D" to="Pava" method="_on_area_2d_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="Pava/Area2D" to="Pava" method="_on_area_2d_mouse_shape_exited"]
