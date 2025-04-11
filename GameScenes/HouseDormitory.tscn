@@ -1,19 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3ovmihavj4xk"]
+[gd_scene load_steps=6 format=3 uid="uid://c3ovmihavj4xk"]
 
-[ext_resource type="PackedScene" uid="uid://b5nq24m1twkon" path="res://Assets/Prefabs/EstampaGauchito.tscn" id="1_ij5jv"]
 [ext_resource type="Texture2D" uid="uid://bbxdnhdn3ip7q" path="res://Assets/Sprites/klipartz.com.png" id="2_w06ue"]
 [ext_resource type="Texture2D" uid="uid://dqg7he0v5f71r" path="res://Assets/UI/Flechas de navegacion/flecha-negra-izquierda.png" id="3_2jqt0"]
-[ext_resource type="Script" uid="uid://dimapo17x0v8h" path="res://GameScenes/flecha_living.gd" id="4_b5lai"]
+[ext_resource type="Script" uid="uid://dimapo17x0v8h" path="res://_Scripts/Flechas/flecha_living.gd" id="4_b5lai"]
 [ext_resource type="FontFile" uid="uid://lfv4nmtl41k4" path="res://Pretty Single.ttf" id="5_2hbxv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5lai"]
 
 [node name="HouseDormitory" type="Node2D"]
-
-[node name="Estampa gauchito" parent="." instance=ExtResource("1_ij5jv")]
-position = Vector2(354, 324)
-scale = Vector2(0.683977, 0.670684)
-script = null
 
 [node name="Klipartz_com" type="Sprite2D" parent="."]
 position = Vector2(902, 469)

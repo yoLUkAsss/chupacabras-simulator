@@ -1,14 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://bodacl5i2ncn0"]
+[gd_scene load_steps=9 format=3 uid="uid://bodacl5i2ncn0"]
 
 [ext_resource type="Texture2D" uid="uid://h8yekrx1n2gf" path="res://Assets/Sprites/Escena1/Interior cabaña 1.png" id="1_colfn"]
 [ext_resource type="Texture2D" uid="uid://donciua6o0as5" path="res://Assets/Sprites/Escena1/Mesa.png" id="2_d4m50"]
-[ext_resource type="Texture2D" uid="uid://bc6srrojt845l" path="res://Assets/Sprites/Escena1/Garrafa y pava.png" id="4_fle3p"]
 [ext_resource type="FontFile" uid="uid://lfv4nmtl41k4" path="res://Pretty Single.ttf" id="4_noxm1"]
-[ext_resource type="Texture2D" uid="uid://di6kujyq6vuq3" path="res://Assets/Sprites/Escena1/Mate.png" id="5_fle3p"]
 [ext_resource type="Texture2D" uid="uid://dqg7he0v5f71r" path="res://Assets/UI/Flechas de navegacion/flecha-negra-izquierda.png" id="6_pvfdy"]
-[ext_resource type="Script" uid="uid://4drpnkiyooj4" path="res://GameScenes/flecha_cocina.gd" id="7_wuit4"]
-[ext_resource type="Script" uid="uid://2snvt7w13w6n" path="res://GameScenes/flecha_pieza.gd" id="8_wuit4"]
-[ext_resource type="Script" uid="uid://bvkxjk1t7tegy" path="res://GameScenes/SalirAfuera.gd" id="9_mt05b"]
+[ext_resource type="Script" uid="uid://4drpnkiyooj4" path="res://_Scripts/Flechas/flecha_cocina.gd" id="7_wuit4"]
+[ext_resource type="Script" uid="uid://2snvt7w13w6n" path="res://_Scripts/Flechas/flecha_pieza.gd" id="8_wuit4"]
+[ext_resource type="Script" uid="uid://bvkxjk1t7tegy" path="res://_Scripts/Flechas/SalirAfuera.gd" id="9_mt05b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvfdy"]
 
@@ -21,34 +19,6 @@ texture = ExtResource("1_colfn")
 [node name="Mesa" type="Sprite2D" parent="."]
 position = Vector2(598, 893)
 texture = ExtResource("2_d4m50")
-
-[node name="GarrafaYPava" type="Sprite2D" parent="."]
-position = Vector2(461, 607)
-texture = ExtResource("4_fle3p")
-
-[node name="Label" type="Label" parent="GarrafaYPava"]
-visible = false
-modulate = Color(0, 0, 0, 1)
-offset_left = -20.0
-offset_top = -205.0
-offset_right = 101.0
-offset_bottom = -115.0
-scale = Vector2(0.5, 0.5)
-theme_override_fonts/font = ExtResource("4_noxm1")
-theme_override_font_sizes/font_size = 81
-text = "Text"
-
-[node name="Panel" type="Panel" parent="GarrafaYPava"]
-visible = false
-offset_left = -55.0
-offset_top = -125.0
-offset_right = -15.0
-offset_bottom = -85.0
-scale = Vector2(2.71764, 2.66637)
-
-[node name="Mate" type="Sprite2D" parent="."]
-position = Vector2(784, 664)
-texture = ExtResource("5_fle3p")
 
 [node name="Flecha_Cocina" type="Sprite2D" parent="."]
 position = Vector2(1774, 589)
