@@ -1,17 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3ovmihavj4xk"]
+[gd_scene load_steps=10 format=3 uid="uid://c3ovmihavj4xk"]
 
 [ext_resource type="Texture2D" uid="uid://bbxdnhdn3ip7q" path="res://Assets/Sprites/klipartz.com.png" id="2_w06ue"]
 [ext_resource type="Texture2D" uid="uid://dqg7he0v5f71r" path="res://Assets/UI/Flechas de navegacion/flecha-negra-izquierda.png" id="3_2jqt0"]
 [ext_resource type="Script" uid="uid://dimapo17x0v8h" path="res://_Scripts/Flechas/flecha_living.gd" id="4_b5lai"]
 [ext_resource type="FontFile" uid="uid://lfv4nmtl41k4" path="res://Pretty Single.ttf" id="5_2hbxv"]
+[ext_resource type="Texture2D" uid="uid://cdx3jjwoqjldr" path="res://_Scripts/Captura de pantalla 2025-04-11 101559.png" id="5_b5lai"]
+[ext_resource type="Script" uid="uid://sfpqc8kq5i1h" path="res://_Scripts/gauchito.gd" id="6_2hbxv"]
+[ext_resource type="AudioStream" uid="uid://b3umb214cj25w" path="res://SFX/GauchitoSuerte.mp3" id="7_u3obj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5lai"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hbxv"]
+size = Vector2(215.592, 746.388)
 
 [node name="HouseDormitory" type="Node2D"]
 
 [node name="Klipartz_com" type="Sprite2D" parent="."]
-position = Vector2(902, 469)
-scale = Vector2(0.28, 0.28)
+position = Vector2(1382, 860)
+scale = Vector2(0.440388, 0.440388)
 texture = ExtResource("2_w06ue")
 
 [node name="Flecha_Living" type="Sprite2D" parent="."]
@@ -48,6 +54,74 @@ theme_override_fonts/font = ExtResource("5_2hbxv")
 theme_override_font_sizes/font_size = 56
 text = "Living"
 
+[node name="Gauchito" type="Sprite2D" parent="."]
+position = Vector2(303, 688)
+scale = Vector2(0.444736, 0.444736)
+texture = ExtResource("5_b5lai")
+script = ExtResource("6_2hbxv")
+
+[node name="Area2D" type="Area2D" parent="Gauchito"]
+position = Vector2(24.7338, 26.9824)
+scale = Vector2(1.96899, 1.13342)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gauchito/Area2D"]
+position = Vector2(-12.4082, 0.60199)
+shape = SubResource("RectangleShape2D_2hbxv")
+
+[node name="Panel" type="Panel" parent="Gauchito"]
+offset_left = -276.082
+offset_top = -404.816
+offset_right = -236.082
+offset_bottom = -364.816
+scale = Vector2(14.1182, 21.3406)
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Gauchito"]
+modulate = Color(0, 0, 0, 1)
+offset_left = -388.995
+offset_top = -557.635
+offset_right = 2.00482
+offset_bottom = -494.635
+rotation = -6.28318
+scale = Vector2(2.03253, 2.2207)
+theme_override_fonts/font = ExtResource("5_2hbxv")
+theme_override_font_sizes/font_size = 56
+text = "Rezarle al gauchito"
+
+[node name="Label2" type="Label" parent="Gauchito"]
+modulate = Color(0.352941, 0.737255, 0, 1)
+offset_left = 3127.7
+offset_top = -1472.78
+offset_right = 3518.7
+offset_bottom = -1409.78
+rotation = -6.28318
+scale = Vector2(1.05923, 1.15729)
+theme_override_fonts/font = ExtResource("5_2hbxv")
+theme_override_font_sizes/font_size = 56
+text = "Suerte++"
+
+[node name="Label3" type="Label" parent="Gauchito"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 1070.3
+offset_top = -971.364
+offset_right = 1461.3
+offset_bottom = -908.364
+rotation = -6.28318
+scale = Vector2(1.77876, 1.94343)
+theme_override_fonts/font = ExtResource("5_2hbxv")
+theme_override_font_sizes/font_size = 56
+text = "Ya le rezaste"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Gauchito"]
+stream = ExtResource("7_u3obj")
+
+[node name="HideLabelTimer" type="Timer" parent="Gauchito"]
+one_shot = true
+
 [connection signal="input_event" from="Flecha_Living/Area2D" to="Flecha_Living" method="_on_area_2d_input_event"]
 [connection signal="mouse_shape_entered" from="Flecha_Living/Area2D" to="Flecha_Living" method="_on_area_2d_mouse_shape_entered"]
 [connection signal="mouse_shape_exited" from="Flecha_Living/Area2D" to="Flecha_Living" method="_on_area_2d_mouse_shape_exited"]
+[connection signal="input_event" from="Gauchito/Area2D" to="Gauchito" method="_on_area_2d_input_event"]
+[connection signal="mouse_shape_entered" from="Gauchito/Area2D" to="Gauchito" method="_on_area_2d_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="Gauchito/Area2D" to="Gauchito" method="_on_area_2d_mouse_shape_exited"]
+[connection signal="timeout" from="Gauchito/HideLabelTimer" to="Gauchito" method="_on_timer_timeout"]

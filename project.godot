@@ -13,6 +13,10 @@ config_version=5
 config/name="Jam godot"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
+[autoload]
+
+GameState="*res://_Scripts/Game_state.gd"
+
 [display]
 
 window/size/viewport_width=1920
