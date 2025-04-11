@@ -1,29 +1,49 @@
-[gd_scene load_steps=6 format=3 uid="uid://bodacl5i2ncn0"]
+[gd_scene load_steps=7 format=3 uid="uid://bodacl5i2ncn0"]
 
-[ext_resource type="PackedScene" uid="uid://b3c8sbd8368vq" path="res://Assets/UI/Flechas de navegacion/FlechasNavegacion.tscn" id="1_d4m50"]
-[ext_resource type="Texture2D" uid="uid://cihw81ijqiq6q" path="res://Assets/Sprites/background_housemain.png" id="1_noxm1"]
-[ext_resource type="PackedScene" uid="uid://dfrikgbcgjsci" path="res://Assets/Prefabs/Puerta.tscn" id="2_noxm1"]
-[ext_resource type="PackedScene" uid="uid://m6mllmxfhqt4" path="res://Assets/Prefabs/Mate.tscn" id="4_pvfdy"]
-
-[sub_resource type="ImageTexture" id="ImageTexture_fle3p"]
+[ext_resource type="Texture2D" uid="uid://h8yekrx1n2gf" path="res://Assets/Sprites/Escena1/Interior cabaña 1.png" id="1_colfn"]
+[ext_resource type="Texture2D" uid="uid://donciua6o0as5" path="res://Assets/Sprites/Escena1/Mesa.png" id="2_d4m50"]
+[ext_resource type="Texture2D" uid="uid://bc6srrojt845l" path="res://Assets/Sprites/Escena1/Garrafa y pava.png" id="4_fle3p"]
+[ext_resource type="FontFile" uid="uid://lfv4nmtl41k4" path="res://Pretty Single.ttf" id="4_noxm1"]
+[ext_resource type="Script" uid="uid://dpu0e6ewl7axo" path="res://GameScenes/garrafa_y_pava.gd" id="6_fle3p"]
+[ext_resource type="PackedScene" uid="uid://2wovex2i1evu" path="res://Mate.tscn" id="6_pvfdy"]
 
 [node name="DentroDeLaCasa" type="Node2D"]
 
-[node name="BackgroundHousemain" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
-scale = Vector2(0.911203, 0.911203)
-texture = ExtResource("1_noxm1")
+[node name="InteriorCabaña1" type="Sprite2D" parent="."]
+position = Vector2(965, 534)
+texture = ExtResource("1_colfn")
 
-[node name="FlechaNavegacion" parent="." instance=ExtResource("1_d4m50")]
+[node name="Mesa" type="Sprite2D" parent="."]
+position = Vector2(598, 893)
+texture = ExtResource("2_d4m50")
 
-[node name="Puerta" parent="." instance=ExtResource("2_noxm1")]
-position = Vector2(746, 355)
-scale = Vector2(0.719999, 0.719999)
-text = "Salir afuera"
+[node name="GarrafaYPava" type="Sprite2D" parent="."]
+position = Vector2(461, 607)
+texture = ExtResource("4_fle3p")
+script = ExtResource("6_fle3p")
 
-[node name="Mate" parent="." instance=ExtResource("4_pvfdy")]
-position = Vector2(439, 360)
-scale = Vector2(0.239999, 0.239999)
+[node name="Label" type="Label" parent="GarrafaYPava"]
+visible = false
+modulate = Color(0, 0, 0, 1)
+offset_left = -20.0
+offset_top = -205.0
+offset_right = 101.0
+offset_bottom = -115.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("4_noxm1")
+theme_override_font_sizes/font_size = 81
+text = "Text"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("ImageTexture_fle3p")
+[node name="Panel" type="Panel" parent="GarrafaYPava"]
+visible = false
+offset_left = -55.0
+offset_top = -125.0
+offset_right = -15.0
+offset_bottom = -85.0
+scale = Vector2(2.71764, 2.66637)
+
+[node name="Control" parent="." instance=ExtResource("6_pvfdy")]
+offset_left = 762.0
+offset_top = 690.0
+offset_right = 762.0
+offset_bottom = 690.0

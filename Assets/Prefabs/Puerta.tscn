@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfrikgbcgjsci"]
+[gd_scene load_steps=4 format=3 uid="uid://dppipokjkxc1d"]
 
-[ext_resource type="Script" uid="uid://b84cdefgx1jxq" path="res://_Scripts/TextOnOverlap.gd" id="1_hj1h2"]
-[ext_resource type="Texture2D" uid="uid://bauuwllfyikxn" path="res://Assets/Sprites/Captura de pantalla 2025-04-09 211324.png" id="1_mvqrv"]
-[ext_resource type="Script" uid="uid://bm1w3pydml2x3" path="res://_Scripts/GoToNewScene.gd" id="2_qc2o3"]
+[ext_resource type="Script" path="res://_Scripts/Handleers/TextOnOverlap.gd" id="1_hj1h2"]
+[ext_resource type="Script" path="res://_Scripts/GoToNewScene.gd" id="2_qc2o3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kuuhf"]
 size = Vector2(261, 567)
@@ -12,7 +11,6 @@ script = ExtResource("1_hj1h2")
 text = "Salir a afuera"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_mvqrv")
 script = ExtResource("2_qc2o3")
 Scene = "res://GameScenes/escena 3d.tscn"
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2qjvtnd2yspb"
-path="res://.godot/imported/gratis-png-iconos-de-ordenador-mate-bigmidin-thumbnail.png-58220081e8e575756fa35d6a00fcc027.ctex"
+uid="uid://h8yekrx1n2gf"
+path="res://.godot/imported/Interior cabaña 1.png-13fdd9c16cdbe540b405593b710fb450.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/gratis-png-iconos-de-ordenador-mate-bigmidin-thumbnail.png"
-dest_files=["res://.godot/imported/gratis-png-iconos-de-ordenador-mate-bigmidin-thumbnail.png-58220081e8e575756fa35d6a00fcc027.ctex"]
+source_file="res://Assets/Sprites/Escena1/Interior cabaña 1.png"
+dest_files=["res://.godot/imported/Interior cabaña 1.png-13fdd9c16cdbe540b405593b710fb450.ctex"]
 
 [params]
 

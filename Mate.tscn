@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://2wovex2i1evu"]
+
+[ext_resource type="Script" uid="uid://krw773tc1q4w" path="res://mate.gd" id="1_r6l1j"]
+[ext_resource type="Texture2D" uid="uid://di6kujyq6vuq3" path="res://Assets/Sprites/Escena1/Mate.png" id="1_s4v7c"]
+[ext_resource type="FontFile" uid="uid://lfv4nmtl41k4" path="res://Pretty Single.ttf" id="3_qwsgf"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r6l1j")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.0
+offset_top = -141.0
+offset_right = 91.0
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_s4v7c")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 94.0
+offset_top = -77.0
+offset_right = 176.0
+offset_bottom = -16.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_qwsgf")
+theme_override_font_sizes/font_size = 55
+text = "Text"
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -42.0
+offset_top = -60.0
+offset_right = -2.0
+offset_bottom = -20.0
+scale = Vector2(2.6399, 3.34322)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
