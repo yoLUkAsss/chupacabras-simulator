@@ -1,51 +1,68 @@
-[gd_scene load_steps=7 format=3 uid="uid://bodacl5i2ncn0"]
+[gd_scene load_steps=10 format=3 uid="uid://bodacl5i2ncn0"]
 
 [ext_resource type="Texture2D" uid="uid://h8yekrx1n2gf" path="res://Assets/Sprites/Escena1/Interior cabaña 1.png" id="1_colfn"]
 [ext_resource type="Texture2D" uid="uid://donciua6o0as5" path="res://Assets/Sprites/Escena1/Mesa.png" id="2_d4m50"]
-[ext_resource type="Texture2D" uid="uid://bc6srrojt845l" path="res://Assets/Sprites/Escena1/Garrafa y pava.png" id="4_fle3p"]
 [ext_resource type="FontFile" uid="uid://lfv4nmtl41k4" path="res://Pretty Single.ttf" id="4_noxm1"]
-[ext_resource type="Texture2D" uid="uid://di6kujyq6vuq3" path="res://Assets/Sprites/Escena1/Mate.png" id="5_fle3p"]
+[ext_resource type="Texture2D" uid="uid://d0y6cdg4u8t2t" path="res://Assets/Sprites/Escena1/Garrafa.png" id="5_fle3p"]
+[ext_resource type="PackedScene" uid="uid://bex6ujfllncpi" path="res://Mate.tscn" id="6_fle3p"]
 [ext_resource type="Texture2D" uid="uid://dqg7he0v5f71r" path="res://Assets/UI/Flechas de navegacion/flecha-negra-izquierda.png" id="6_pvfdy"]
+[ext_resource type="Texture2D" uid="uid://clqeit11eam6q" path="res://Assets/Sprites/Escena1/Pava.png" id="6_wuit4"]
+[ext_resource type="Script" uid="uid://b1iys866rjwk3" path="res://GameScenes/pava.gd" id="7_wuit4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvfdy"]
+size = Vector2(150, 133.5)
 
 [node name="DentroDeLaCasa" type="Node2D"]
 
 [node name="InteriorCabaña1" type="Sprite2D" parent="."]
-position = Vector2(965, 534)
+position = Vector2(963, 540)
+scale = Vector2(1.01019, 1.01019)
 texture = ExtResource("1_colfn")
 
 [node name="Mesa" type="Sprite2D" parent="."]
 position = Vector2(598, 893)
 texture = ExtResource("2_d4m50")
 
-[node name="GarrafaYPava" type="Sprite2D" parent="."]
-position = Vector2(461, 607)
-texture = ExtResource("4_fle3p")
-
-[node name="Label" type="Label" parent="GarrafaYPava"]
-visible = false
-modulate = Color(0, 0, 0, 1)
-offset_left = -20.0
-offset_top = -205.0
-offset_right = 101.0
-offset_bottom = -115.0
-scale = Vector2(0.5, 0.5)
-theme_override_fonts/font = ExtResource("4_noxm1")
-theme_override_font_sizes/font_size = 81
-text = "Text"
-
-[node name="Panel" type="Panel" parent="GarrafaYPava"]
-visible = false
-offset_left = -55.0
-offset_top = -125.0
-offset_right = -15.0
-offset_bottom = -85.0
-scale = Vector2(2.71764, 2.66637)
-
-[node name="Mate" type="Sprite2D" parent="."]
-position = Vector2(784, 664)
-texture = ExtResource("5_fle3p")
-
 [node name="Flecha-negra-izquierda" type="Sprite2D" parent="."]
 position = Vector2(188, 577)
 scale = Vector2(0.341797, 0.341797)
 texture = ExtResource("6_pvfdy")
+
+[node name="Mate" parent="." instance=ExtResource("6_fle3p")]
+position = Vector2(743, 650)
+scale = Vector2(1.21932, 1.21932)
+
+[node name="Garrafa" type="Sprite2D" parent="."]
+position = Vector2(523, 657)
+texture = ExtResource("5_fle3p")
+
+[node name="Pava" type="Sprite2D" parent="."]
+position = Vector2(523, 503)
+texture = ExtResource("6_wuit4")
+script = ExtResource("7_wuit4")
+
+[node name="Area2D" type="Area2D" parent="Pava"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pava/Area2D"]
+position = Vector2(1, -1.75)
+shape = SubResource("RectangleShape2D_pvfdy")
+
+[node name="Panel" type="Panel" parent="Pava"]
+offset_left = -79.0
+offset_top = -73.0
+offset_right = 81.0
+offset_bottom = 69.0
+
+[node name="Label" type="Label" parent="Pava"]
+offset_left = 92.0
+offset_top = -67.0
+offset_right = 291.0
+offset_bottom = -6.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("4_noxm1")
+theme_override_font_sizes/font_size = 55
+text = "Pava"
+
+[connection signal="input_event" from="Pava/Area2D" to="Pava" method="_on_area_2d_input_event"]
+[connection signal="mouse_shape_entered" from="Pava/Area2D" to="Pava" method="_on_area_2d_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="Pava/Area2D" to="Pava" method="_on_area_2d_mouse_shape_exited"]

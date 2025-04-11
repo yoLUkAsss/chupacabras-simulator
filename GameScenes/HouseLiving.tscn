@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cywhj72liej7c" path="res://Assets/Prefabs/Radio.tscn" id="1_n35v4"]
 [ext_resource type="Texture2D" uid="uid://dqg7he0v5f71r" path="res://Assets/UI/Flechas de navegacion/flecha-negra-izquierda.png" id="2_vvy8n"]
-[ext_resource type="Script" uid="uid://bm1w3pydml2x3" path="res://_Scripts/GoToNewScene.gd" id="3_qnjcs"]
+[ext_resource type="Script" path="res://_Scripts/GoToNewScene.gd" id="3_qnjcs"]
 [ext_resource type="Texture2D" uid="uid://bgfsx0uwubb4d" path="res://Assets/Sprites/houseliving-interior.png" id="4_vvy8n"]
 
 [node name="HouseDormitory" type="Node2D"]

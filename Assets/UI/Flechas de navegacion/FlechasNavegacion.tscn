@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b3c8sbd8368vq"]
 
 [ext_resource type="Texture2D" uid="uid://dqg7he0v5f71r" path="res://Assets/UI/Flechas de navegacion/flecha-negra-izquierda.png" id="1_kg3xx"]
-[ext_resource type="Script" uid="uid://bm1w3pydml2x3" path="res://_Scripts/GoToNewScene.gd" id="2_qaxh4"]
+[ext_resource type="Script" path="res://_Scripts/GoToNewScene.gd" id="2_qaxh4"]
 
 [node name="FlechaNavegacion" type="Node2D"]
 rotation = -0.000435941
