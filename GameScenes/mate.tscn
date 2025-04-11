@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://dr0vkdnno6iw8"]
+
+[ext_resource type="Texture2D" uid="uid://di6kujyq6vuq3" path="res://Assets/Sprites/Escena1/Mate.png" id="1_u8vtf"]
+[ext_resource type="Script" uid="uid://b2nfnmw2q0fqg" path="res://mate.gd" id="2_ef7xo"]
+[ext_resource type="FontFile" uid="uid://lfv4nmtl41k4" path="res://Pretty Single.ttf" id="3_12ktq"]
+[ext_resource type="AudioStream" uid="uid://ciwbygn4pxfm1" path="res://SFX/RuidoMate-[AudioTrimmer.com].mp3" id="4_sao41"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8406"]
+size = Vector2(108.923, 175.122)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_583mg"]
+bg_color = Color(0, 0, 0, 0.294118)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Mate" type="Sprite2D"]
+scale = Vector2(0.798077, 0.798077)
+texture = ExtResource("1_u8vtf")
+script = ExtResource("2_ef7xo")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.581665, 1.10297)
+shape = SubResource("RectangleShape2D_c8406")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -65.1567
+offset_top = -95.2289
+offset_right = 79.8433
+offset_bottom = 97.7711
+scale = Vector2(0.920012, 1.02298)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_583mg")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 86.4578
+offset_top = -48.8674
+offset_right = 289.458
+offset_bottom = 14.1326
+scale = Vector2(0.801755, 0.875981)
+theme_override_fonts/font = ExtResource("3_12ktq")
+theme_override_font_sizes/font_size = 56
+text = "Mate frío"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_sao41")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_shape_entered" from="Area2D" to="." method="_on_area_2d_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="Area2D" to="." method="_on_area_2d_mouse_shape_exited"]

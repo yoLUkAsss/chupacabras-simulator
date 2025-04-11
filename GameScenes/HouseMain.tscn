@@ -1,16 +1,15 @@
-[gd_scene load_steps=19 format=3 uid="uid://bodacl5i2ncn0"]
+[gd_scene load_steps=17 format=3 uid="uid://bodacl5i2ncn0"]
 
 [ext_resource type="Texture2D" uid="uid://h8yekrx1n2gf" path="res://Assets/Sprites/Escena1/Interior cabaña 1.png" id="1_colfn"]
 [ext_resource type="Texture2D" uid="uid://donciua6o0as5" path="res://Assets/Sprites/Escena1/Mesa.png" id="2_d4m50"]
 [ext_resource type="FontFile" uid="uid://lfv4nmtl41k4" path="res://Pretty Single.ttf" id="4_noxm1"]
 [ext_resource type="Texture2D" uid="uid://dqg7he0v5f71r" path="res://Assets/UI/Flechas de navegacion/flecha-negra-izquierda.png" id="6_pvfdy"]
 [ext_resource type="Script" uid="uid://4drpnkiyooj4" path="res://_Scripts/Flechas/flecha_cocina.gd" id="7_wuit4"]
-[ext_resource type="Texture2D" uid="uid://di6kujyq6vuq3" path="res://Assets/Sprites/Escena1/Mate.png" id="8_c8406"]
 [ext_resource type="Script" uid="uid://2snvt7w13w6n" path="res://_Scripts/Flechas/flecha_pieza.gd" id="8_wuit4"]
 [ext_resource type="Texture2D" uid="uid://d0y6cdg4u8t2t" path="res://Assets/Sprites/Escena1/Garrafa.png" id="9_0xmua"]
-[ext_resource type="Script" uid="uid://b2nfnmw2q0fqg" path="res://mate.gd" id="9_583mg"]
 [ext_resource type="Script" uid="uid://bvkxjk1t7tegy" path="res://_Scripts/Flechas/SalirAfuera.gd" id="9_mt05b"]
 [ext_resource type="Texture2D" uid="uid://clqeit11eam6q" path="res://Assets/Sprites/Escena1/Pava.png" id="10_583mg"]
+[ext_resource type="PackedScene" uid="uid://dr0vkdnno6iw8" path="res://GameScenes/mate.tscn" id="11_0xmua"]
 [ext_resource type="Script" uid="uid://cq50esh08nr8q" path="res://GameScenes/pava.gd" id="12_583mg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pvfdy"]
@@ -28,9 +27,6 @@ size = Vector2(20, 17.2581)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mt05b"]
 size = Vector2(9.67743, 15.0528)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_c8406"]
-size = Vector2(108.923, 175.122)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xmua"]
 size = Vector2(156.5, 138.25)
@@ -149,38 +145,6 @@ theme_override_fonts/font = ExtResource("4_noxm1")
 theme_override_font_sizes/font_size = 56
 text = "Salir"
 
-[node name="Mate" type="Sprite2D" parent="."]
-position = Vector2(765, 664)
-scale = Vector2(0.798077, 0.798077)
-texture = ExtResource("8_c8406")
-script = ExtResource("9_583mg")
-
-[node name="Area2D" type="Area2D" parent="Mate"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mate/Area2D"]
-position = Vector2(-0.581665, 1.10297)
-shape = SubResource("RectangleShape2D_c8406")
-
-[node name="Panel" type="Panel" parent="Mate"]
-offset_left = -65.1567
-offset_top = -95.2289
-offset_right = 79.8433
-offset_bottom = 97.7711
-scale = Vector2(0.920012, 1.02298)
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_583mg")
-
-[node name="Label" type="Label" parent="Mate"]
-modulate = Color(0, 0, 0, 1)
-offset_left = 86.4578
-offset_top = -48.8674
-offset_right = 289.458
-offset_bottom = 14.1326
-scale = Vector2(0.801755, 0.875981)
-theme_override_fonts/font = ExtResource("4_noxm1")
-theme_override_font_sizes/font_size = 56
-text = "Mate frío"
-
 [node name="Garrafa" type="Sprite2D" parent="."]
 position = Vector2(548, 655)
 texture = ExtResource("9_0xmua")
@@ -215,6 +179,12 @@ theme_override_fonts/font = ExtResource("4_noxm1")
 theme_override_font_sizes/font_size = 56
 text = "Pava"
 
+[node name="Mate" parent="." instance=ExtResource("11_0xmua")]
+position = Vector2(765, 664)
+
+[node name="MateHolder" type="Node2D" parent="."]
+position = Vector2(1268, 935)
+
 [connection signal="input_event" from="Flecha_Cocina/Area2D" to="Flecha_Cocina" method="_on_area_2d_input_event"]
 [connection signal="mouse_shape_entered" from="Flecha_Cocina/Area2D" to="Flecha_Cocina" method="_on_area_2d_mouse_shape_entered"]
 [connection signal="mouse_shape_exited" from="Flecha_Cocina/Area2D" to="Flecha_Cocina" method="_on_area_2d_mouse_shape_exited"]
@@ -224,9 +194,6 @@ text = "Pava"
 [connection signal="input_event" from="Puerta/Area2D" to="Puerta" method="_on_area_2d_input_event"]
 [connection signal="mouse_shape_entered" from="Puerta/Area2D" to="Puerta" method="_on_area_2d_mouse_shape_entered"]
 [connection signal="mouse_shape_exited" from="Puerta/Area2D" to="Puerta" method="_on_area_2d_mouse_shape_exited"]
-[connection signal="input_event" from="Mate/Area2D" to="Mate" method="_on_area_2d_input_event"]
-[connection signal="mouse_shape_entered" from="Mate/Area2D" to="Mate" method="_on_area_2d_mouse_shape_entered"]
-[connection signal="mouse_shape_exited" from="Mate/Area2D" to="Mate" method="_on_area_2d_mouse_shape_exited"]
 [connection signal="input_event" from="Pava/Area2D" to="Pava" method="_on_area_2d_input_event"]
 [connection signal="mouse_shape_entered" from="Pava/Area2D" to="Pava" method="_on_area_2d_mouse_shape_entered"]
 [connection signal="mouse_shape_exited" from="Pava/Area2D" to="Pava" method="_on_area_2d_mouse_shape_exited"]

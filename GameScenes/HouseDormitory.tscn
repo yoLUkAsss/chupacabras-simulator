@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3ovmihavj4xk"]
+[gd_scene load_steps=11 format=3 uid="uid://c3ovmihavj4xk"]
 
 [ext_resource type="Texture2D" uid="uid://bbxdnhdn3ip7q" path="res://Assets/Sprites/klipartz.com.png" id="2_w06ue"]
 [ext_resource type="Texture2D" uid="uid://dqg7he0v5f71r" path="res://Assets/UI/Flechas de navegacion/flecha-negra-izquierda.png" id="3_2jqt0"]
 [ext_resource type="Script" uid="uid://dimapo17x0v8h" path="res://_Scripts/Flechas/flecha_living.gd" id="4_b5lai"]
 [ext_resource type="FontFile" uid="uid://lfv4nmtl41k4" path="res://Pretty Single.ttf" id="5_2hbxv"]
-[ext_resource type="Texture2D" uid="uid://cdx3jjwoqjldr" path="res://_Scripts/Captura de pantalla 2025-04-11 101559.png" id="5_b5lai"]
+[ext_resource type="Texture2D" uid="uid://bt1yvr0kbwpwa" path="res://_Scripts/Captura de pantalla 2025-04-11 101559.png" id="5_b5lai"]
 [ext_resource type="Script" uid="uid://sfpqc8kq5i1h" path="res://_Scripts/gauchito.gd" id="6_2hbxv"]
 [ext_resource type="AudioStream" uid="uid://b3umb214cj25w" path="res://SFX/GauchitoSuerte.mp3" id="7_u3obj"]
+[ext_resource type="PackedScene" uid="uid://dr0vkdnno6iw8" path="res://GameScenes/mate.tscn" id="8_go05u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5lai"]
 
@@ -118,10 +119,16 @@ stream = ExtResource("7_u3obj")
 [node name="HideLabelTimer" type="Timer" parent="Gauchito"]
 one_shot = true
 
+[node name="Mate" parent="." instance=ExtResource("8_go05u")]
+position = Vector2(883, 706)
+
+[node name="MateHolder" type="Node2D" parent="."]
+position = Vector2(1268, 935)
+
 [connection signal="input_event" from="Flecha_Living/Area2D" to="Flecha_Living" method="_on_area_2d_input_event"]
 [connection signal="mouse_shape_entered" from="Flecha_Living/Area2D" to="Flecha_Living" method="_on_area_2d_mouse_shape_entered"]
 [connection signal="mouse_shape_exited" from="Flecha_Living/Area2D" to="Flecha_Living" method="_on_area_2d_mouse_shape_exited"]
 [connection signal="input_event" from="Gauchito/Area2D" to="Gauchito" method="_on_area_2d_input_event"]
 [connection signal="mouse_shape_entered" from="Gauchito/Area2D" to="Gauchito" method="_on_area_2d_mouse_shape_entered"]
 [connection signal="mouse_shape_exited" from="Gauchito/Area2D" to="Gauchito" method="_on_area_2d_mouse_shape_exited"]
-[connection signal="timeout" from="Gauchito/HideLabelTimer" to="Gauchito" method="_on_timer_timeout"]
+[connection signal="timeout" from="Gauchito/HideLabelTimer" to="Gauchito" method="_on_hide_label_timer_timeout"]

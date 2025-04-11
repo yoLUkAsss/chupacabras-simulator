@@ -26,7 +26,6 @@ func _on_area_2d_mouse_shape_entered(shape_idx: int) -> void:
 func _on_area_2d_mouse_shape_exited(shape_idx: int) -> void:
 	label.visible = false
 	label2.visible = false
-	label3.visible = false
 	panel.visible = false
 	pass # Replace with function body.
 
@@ -42,8 +41,4 @@ func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) 
 			hide_label_timer.start()
 			
 func _on_hide_label_timer_timeout():
-	label.visible = false
-
-
-func _on_timer_timeout() -> void:
-	pass # Replace with function body.
+	label3.visible = false

@@ -15,7 +15,8 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
 
-GameState="*res://_Scripts/Game_state.gd"
+MateController="*res://_Scripts/MateController.gd"
+GameState="*res://_Scripts/GameState.gd"
 
 [display]
 
