@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bx6tbo860fah6"
-path="res://.godot/imported/png-clipart-table-wood-furniture-table-angle-rectangle-thumbnail.png-bb18a02ef035702b45d079e4e1972361.ctex"
+uid="uid://cihw81ijqiq6q"
+path="res://.godot/imported/background_housemain.png-52f660b0ad0f84038e15768e156e53d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/png-clipart-table-wood-furniture-table-angle-rectangle-thumbnail.png"
-dest_files=["res://.godot/imported/png-clipart-table-wood-furniture-table-angle-rectangle-thumbnail.png-bb18a02ef035702b45d079e4e1972361.ctex"]
+source_file="res://Assets/Sprites/background_housemain.png"
+dest_files=["res://.godot/imported/background_housemain.png-52f660b0ad0f84038e15768e156e53d8.ctex"]
 
 [params]
 
