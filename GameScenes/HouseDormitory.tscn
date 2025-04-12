@@ -1,31 +1,55 @@
-[gd_scene load_steps=11 format=3 uid="uid://c3ovmihavj4xk"]
+[gd_scene load_steps=20 format=3 uid="uid://c3ovmihavj4xk"]
 
-[ext_resource type="Texture2D" uid="uid://bbxdnhdn3ip7q" path="res://Assets/Sprites/klipartz.com.png" id="2_w06ue"]
-[ext_resource type="Texture2D" uid="uid://dqg7he0v5f71r" path="res://Assets/UI/Flechas de navegacion/flecha-negra-izquierda.png" id="3_2jqt0"]
+[ext_resource type="Texture2D" uid="uid://looqhrt6i1nr" path="res://Assets/Sprites/houseDormitory/houseDormitory_interior.png" id="1_4hn50"]
+[ext_resource type="Texture2D" uid="uid://cd5xannvefovb" path="res://Assets/UI/flecha-negra-izquierda.png" id="2_4hn50"]
 [ext_resource type="Script" uid="uid://dimapo17x0v8h" path="res://_Scripts/Flechas/flecha_living.gd" id="4_b5lai"]
-[ext_resource type="FontFile" uid="uid://lfv4nmtl41k4" path="res://Pretty Single.ttf" id="5_2hbxv"]
-[ext_resource type="Texture2D" uid="uid://bt1yvr0kbwpwa" path="res://_Scripts/Captura de pantalla 2025-04-11 101559.png" id="5_b5lai"]
+[ext_resource type="Texture2D" uid="uid://bldyrbbs47loh" path="res://Assets/Sprites/houseDormitory/afiche.png" id="5_4hn50"]
+[ext_resource type="Texture2D" uid="uid://csf24jb5p1aew" path="res://Assets/Sprites/houseDormitory/cama.png" id="5_qwh50"]
 [ext_resource type="Script" uid="uid://sfpqc8kq5i1h" path="res://_Scripts/gauchito.gd" id="6_2hbxv"]
+[ext_resource type="Texture2D" uid="uid://chyhpsp2qdluy" path="res://Assets/Sprites/houseDormitory/mesa.png" id="6_gdqmh"]
+[ext_resource type="FontFile" uid="uid://lfv4nmtl41k4" path="res://Assets/Fonts/Pretty Single.ttf" id="7_qwh50"]
 [ext_resource type="AudioStream" uid="uid://b3umb214cj25w" path="res://SFX/GauchitoSuerte.mp3" id="7_u3obj"]
+[ext_resource type="Texture2D" uid="uid://cnbr6lfe65o0n" path="res://Assets/Sprites/houseDormitory/garrafa.png" id="8_4hn50"]
 [ext_resource type="PackedScene" uid="uid://dr0vkdnno6iw8" path="res://GameScenes/mate.tscn" id="8_go05u"]
+[ext_resource type="Texture2D" uid="uid://candwyyy5q5rh" path="res://Assets/Sprites/houseDormitory/radio.png" id="9_4hn50"]
+[ext_resource type="Script" uid="uid://b5s852yek5yed" path="res://_Scripts/radio.gd" id="10_ed1jn"]
+[ext_resource type="PackedScene" uid="uid://c152h60h2sf5y" path="res://GameScenes/pava.tscn" id="14_gdqmh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5lai"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lyyeo"]
+size = Vector2(20, 17.0968)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dds7j"]
+bg_color = Color(0, 0, 0, 0.294118)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hbxv"]
-size = Vector2(215.592, 746.388)
+size = Vector2(275.44, 619.19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qwh50"]
+size = Vector2(247.164, 184.27)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gdqmh"]
+bg_color = Color(0, 0, 0, 0.294118)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="HouseDormitory" type="Node2D"]
 
-[node name="Klipartz_com" type="Sprite2D" parent="."]
-position = Vector2(1382, 860)
-scale = Vector2(0.440388, 0.440388)
-texture = ExtResource("2_w06ue")
+[node name="HouseDormitory_interior" type="Sprite2D" parent="."]
+position = Vector2(962, 540)
+scale = Vector2(1.01559, 1.01559)
+texture = ExtResource("1_4hn50")
 
 [node name="Flecha_Living" type="Sprite2D" parent="."]
-position = Vector2(1829, 612)
-rotation = -3.14159
+position = Vector2(1774, 589)
+rotation = 3.14159
 scale = Vector2(0.24, 0.24)
-texture = ExtResource("3_2jqt0")
+texture = ExtResource("2_4hn50")
 script = ExtResource("4_b5lai")
 
 [node name="Area2D" type="Area2D" parent="Flecha_Living"]
@@ -33,94 +57,152 @@ position = Vector2(0.000488281, 0.000244141)
 scale = Vector2(25.8333, 25.8333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flecha_Living/Area2D"]
-shape = SubResource("RectangleShape2D_b5lai")
+position = Vector2(0, -0.161301)
+shape = SubResource("RectangleShape2D_lyyeo")
 
 [node name="Panel" type="Panel" parent="Flecha_Living"]
-offset_left = -287.5
-offset_top = -283.333
-offset_right = -247.5
-offset_bottom = -243.333
-scale = Vector2(14.9491, 14.7996)
+offset_left = -310.0
+offset_top = -275.0
+offset_right = 357.0
+offset_bottom = 249.0
+scale = Vector2(0.920012, 1.02298)
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dds7j")
 
 [node name="Label" type="Label" parent="Flecha_Living"]
 modulate = Color(0, 0, 0, 1)
-offset_left = 170.835
-offset_top = 541.665
-offset_right = 288.835
-offset_bottom = 604.665
+offset_left = 179.165
+offset_top = 470.834
+offset_right = 314.165
+offset_bottom = 533.834
 rotation = -3.14159
 scale = Vector2(2.66496, 2.91168)
-theme_override_fonts/font = ExtResource("5_2hbxv")
+theme_override_fonts/font = ExtResource("7_qwh50")
 theme_override_font_sizes/font_size = 56
 text = "Living"
 
+[node name="Cama" type="Sprite2D" parent="."]
+position = Vector2(1563, 872)
+scale = Vector2(0.873545, 0.873545)
+texture = ExtResource("5_qwh50")
+
+[node name="Mesa" type="Sprite2D" parent="."]
+position = Vector2(933, 857)
+scale = Vector2(0.96017, 0.96017)
+texture = ExtResource("6_gdqmh")
+
 [node name="Gauchito" type="Sprite2D" parent="."]
-position = Vector2(303, 688)
-scale = Vector2(0.444736, 0.444736)
-texture = ExtResource("5_b5lai")
+position = Vector2(939, 523)
+scale = Vector2(1.12069, 1.12069)
+texture = ExtResource("5_4hn50")
 script = ExtResource("6_2hbxv")
 
 [node name="Area2D" type="Area2D" parent="Gauchito"]
-position = Vector2(24.7338, 26.9824)
-scale = Vector2(1.96899, 1.13342)
+position = Vector2(3.56915, -7.13837)
+scale = Vector2(0.781373, 0.449785)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Gauchito/Area2D"]
-position = Vector2(-12.4082, 0.60199)
+position = Vector2(-5.70979, 11.903)
 shape = SubResource("RectangleShape2D_2hbxv")
 
 [node name="Panel" type="Panel" parent="Gauchito"]
-offset_left = -276.082
-offset_top = -404.816
-offset_right = -236.082
-offset_bottom = -364.816
-scale = Vector2(14.1182, 21.3406)
+offset_left = -125.0
+offset_top = -163.0
+offset_right = -57.0
+offset_bottom = -98.0
+scale = Vector2(3.66112, 4.9148)
 mouse_filter = 2
 
 [node name="Label" type="Label" parent="Gauchito"]
 modulate = Color(0, 0, 0, 1)
-offset_left = -388.995
-offset_top = -557.635
-offset_right = 2.00482
-offset_bottom = -494.635
+offset_left = -125.815
+offset_top = -224.861
+offset_right = 265.184
+offset_bottom = -161.861
 rotation = -6.28318
-scale = Vector2(2.03253, 2.2207)
-theme_override_fonts/font = ExtResource("5_2hbxv")
+scale = Vector2(0.642387, 0.701858)
+theme_override_fonts/font = ExtResource("7_qwh50")
 theme_override_font_sizes/font_size = 56
 text = "Rezarle al gauchito"
 
 [node name="Label2" type="Label" parent="Gauchito"]
 modulate = Color(0.352941, 0.737255, 0, 1)
-offset_left = 3127.7
-offset_top = -1472.78
-offset_right = 3518.7
-offset_bottom = -1409.78
+offset_left = 643.351
+offset_top = -414.029
+offset_right = 1034.35
+offset_bottom = -351.029
 rotation = -6.28318
-scale = Vector2(1.05923, 1.15729)
-theme_override_fonts/font = ExtResource("5_2hbxv")
+scale = Vector2(0.548066, 0.598804)
+theme_override_fonts/font = ExtResource("7_qwh50")
 theme_override_font_sizes/font_size = 56
 text = "Suerte++"
 
 [node name="Label3" type="Label" parent="Gauchito"]
 modulate = Color(0, 0, 0, 1)
-offset_left = 1070.3
-offset_top = -971.364
-offset_right = 1461.3
-offset_bottom = -908.364
+offset_left = 152.585
+offset_top = -23.2
+offset_right = 543.585
+offset_bottom = 39.8
 rotation = -6.28318
-scale = Vector2(1.77876, 1.94343)
-theme_override_fonts/font = ExtResource("5_2hbxv")
+scale = Vector2(0.637662, 0.696693)
+theme_override_fonts/font = ExtResource("7_qwh50")
 theme_override_font_sizes/font_size = 56
 text = "Ya le rezaste"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Gauchito"]
+position = Vector2(-6.24622, -17.846)
+scale = Vector2(0.396839, 0.396839)
 stream = ExtResource("7_u3obj")
 
 [node name="HideLabelTimer" type="Timer" parent="Gauchito"]
 one_shot = true
 
+[node name="Garrafa" type="Sprite2D" parent="."]
+position = Vector2(384, 980)
+scale = Vector2(0.845577, 0.845577)
+texture = ExtResource("8_4hn50")
+
+[node name="Radio" type="Sprite2D" parent="."]
+position = Vector2(615, 850)
+scale = Vector2(0.921317, 0.921317)
+texture = ExtResource("9_4hn50")
+script = ExtResource("10_ed1jn")
+
+[node name="Area2D" type="Area2D" parent="Radio"]
+position = Vector2(-99.8571, -99.8571)
+scale = Vector2(0.49184, 0.49184)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Radio/Area2D"]
+position = Vector2(147.857, 59.0326)
+shape = SubResource("RectangleShape2D_qwh50")
+
+[node name="Panel" type="Panel" parent="Radio"]
+offset_left = -105.0
+offset_top = -135.0
+offset_right = 52.0
+offset_bottom = -9.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_gdqmh")
+
+[node name="Label" type="Label" parent="Radio"]
+modulate = Color(0, 0, 0, 1)
+offset_left = -68.3804
+offset_top = -199.714
+offset_right = 49.6196
+offset_bottom = -136.714
+scale = Vector2(0.76292, 0.83355)
+theme_override_fonts/font = ExtResource("7_qwh50")
+theme_override_font_sizes/font_size = 56
+text = "Radio"
+
+[node name="Pava" parent="." instance=ExtResource("14_gdqmh")]
+position = Vector2(384, 855)
+
+[node name="PavaHolder" type="Node2D" parent="."]
+position = Vector2(633, 966)
+
 [node name="Mate" parent="." instance=ExtResource("8_go05u")]
-position = Vector2(883, 706)
+position = Vector2(989, 776)
+scale = Vector2(0.567089, 0.567089)
 
 [node name="MateHolder" type="Node2D" parent="."]
 position = Vector2(1268, 935)
@@ -131,4 +213,6 @@ position = Vector2(1268, 935)
 [connection signal="input_event" from="Gauchito/Area2D" to="Gauchito" method="_on_area_2d_input_event"]
 [connection signal="mouse_shape_entered" from="Gauchito/Area2D" to="Gauchito" method="_on_area_2d_mouse_shape_entered"]
 [connection signal="mouse_shape_exited" from="Gauchito/Area2D" to="Gauchito" method="_on_area_2d_mouse_shape_exited"]
-[connection signal="timeout" from="Gauchito/HideLabelTimer" to="Gauchito" method="_on_hide_label_timer_timeout"]
+[connection signal="input_event" from="Radio/Area2D" to="Radio" method="_on_area_2d_input_event"]
+[connection signal="mouse_shape_entered" from="Radio/Area2D" to="Radio" method="_on_area_2d_mouse_shape_entered"]
+[connection signal="mouse_shape_exited" from="Radio/Area2D" to="Radio" method="_on_area_2d_mouse_shape_exited"]

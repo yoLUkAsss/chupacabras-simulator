@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmxvwohprebl3"
-path="res://.godot/imported/klipartz.com (1).png-95f379133847a663eeaf7dbb69497235.ctex"
+uid="uid://cnbr6lfe65o0n"
+path="res://.godot/imported/garrafa.png-a6c5558774f0358af8d1bae3b4a0d36b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/klipartz.com (1).png"
-dest_files=["res://.godot/imported/klipartz.com (1).png-95f379133847a663eeaf7dbb69497235.ctex"]
+source_file="res://Assets/Sprites/houseDormitory/garrafa.png"
+dest_files=["res://.godot/imported/garrafa.png-a6c5558774f0358af8d1bae3b4a0d36b.ctex"]
 
 [params]
 

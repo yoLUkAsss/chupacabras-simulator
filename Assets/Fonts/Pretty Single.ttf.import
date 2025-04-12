@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://lfv4nmtl41k4"
-path="res://.godot/imported/Pretty Single.ttf-b4ad8e030a22412fac9f958cb62c78af.fontdata"
+path="res://.godot/imported/Pretty Single.ttf-7cc34fc22f381192268678356c4c8694.fontdata"
 
 [deps]
 
-source_file="res://Pretty Single.ttf"
-dest_files=["res://.godot/imported/Pretty Single.ttf-b4ad8e030a22412fac9f958cb62c78af.fontdata"]
+source_file="res://Assets/Fonts/Pretty Single.ttf"
+dest_files=["res://.godot/imported/Pretty Single.ttf-7cc34fc22f381192268678356c4c8694.fontdata"]
 
 [params]
 

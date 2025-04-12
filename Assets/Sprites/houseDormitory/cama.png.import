@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clqeit11eam6q"
-path="res://.godot/imported/Pava.png-d65601f6c3a6862d8e5cfa128acd17c8.ctex"
+uid="uid://csf24jb5p1aew"
+path="res://.godot/imported/cama.png-451688653b6951f8ff710ce005645c43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Escena1/Pava.png"
-dest_files=["res://.godot/imported/Pava.png-d65601f6c3a6862d8e5cfa128acd17c8.ctex"]
+source_file="res://Assets/Sprites/houseDormitory/cama.png"
+dest_files=["res://.godot/imported/cama.png-451688653b6951f8ff710ce005645c43.ctex"]
 
 [params]
 

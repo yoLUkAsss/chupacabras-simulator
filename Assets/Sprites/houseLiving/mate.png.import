@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h8yekrx1n2gf"
-path="res://.godot/imported/Interior cabaña 1.png-13fdd9c16cdbe540b405593b710fb450.ctex"
+uid="uid://c8nesibmb5wa5"
+path="res://.godot/imported/mate.png-5c38df78d3166e3fd505d9fef249a97c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Escena1/Interior cabaña 1.png"
-dest_files=["res://.godot/imported/Interior cabaña 1.png-13fdd9c16cdbe540b405593b710fb450.ctex"]
+source_file="res://Assets/Sprites/houseLiving/mate.png"
+dest_files=["res://.godot/imported/mate.png-5c38df78d3166e3fd505d9fef249a97c.ctex"]
 
 [params]
 

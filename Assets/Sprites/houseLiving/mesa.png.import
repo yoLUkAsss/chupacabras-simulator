@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di6kujyq6vuq3"
-path="res://.godot/imported/Mate.png-845b85ad2a2be3415711c4408bbcb988.ctex"
+uid="uid://dru016boqp44p"
+path="res://.godot/imported/mesa.png-2ce9bd5795c7b63d0a1ebc37d75ffdfc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Escena1/Mate.png"
-dest_files=["res://.godot/imported/Mate.png-845b85ad2a2be3415711c4408bbcb988.ctex"]
+source_file="res://Assets/Sprites/houseLiving/mesa.png"
+dest_files=["res://.godot/imported/mesa.png-2ce9bd5795c7b63d0a1ebc37d75ffdfc.ctex"]
 
 [params]
 

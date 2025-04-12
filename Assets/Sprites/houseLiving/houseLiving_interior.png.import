@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0y6cdg4u8t2t"
-path="res://.godot/imported/Garrafa.png-6505e73b0a679eb4fca646eaa8a2a896.ctex"
+uid="uid://dh583kccslow6"
+path="res://.godot/imported/houseLiving_interior.png-e4eefdf6f10069d8a3e8317030497595.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Escena1/Garrafa.png"
-dest_files=["res://.godot/imported/Garrafa.png-6505e73b0a679eb4fca646eaa8a2a896.ctex"]
+source_file="res://Assets/Sprites/houseLiving/houseLiving_interior.png"
+dest_files=["res://.godot/imported/houseLiving_interior.png-e4eefdf6f10069d8a3e8317030497595.ctex"]
 
 [params]
 

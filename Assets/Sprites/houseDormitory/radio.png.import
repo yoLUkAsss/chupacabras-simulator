@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgfsx0uwubb4d"
-path="res://.godot/imported/houseliving-interior.png-dd4dd9fde45158c1bc72f34222fec221.ctex"
+uid="uid://candwyyy5q5rh"
+path="res://.godot/imported/radio.png-3af83735ba069a7c0737b9da98277df3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/houseliving-interior.png"
-dest_files=["res://.godot/imported/houseliving-interior.png-dd4dd9fde45158c1bc72f34222fec221.ctex"]
+source_file="res://Assets/Sprites/houseDormitory/radio.png"
+dest_files=["res://.godot/imported/radio.png-3af83735ba069a7c0737b9da98277df3.ctex"]
 
 [params]
 
