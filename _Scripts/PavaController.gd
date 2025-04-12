@@ -5,7 +5,7 @@ var pava_posiciones_por_escena = {}  # {"res://GameScenes/HouseMain.tscn": Vecto
 var pava_node: Node = null  # Aquí almacenamos la referencia al nodo de la pava
 
 # Configuramos la posición inicial de la pava en el living al iniciar
-var posicion_inicial: Vector2 = Vector2(633, 966)  # Ajusta esta posición según la escena
+var posicion_inicial: Vector2 = Vector2(539, 693)  # Ajusta esta posición según la escena
 
 func _ready():
 	# Si no hay una posición guardada para la habitacion, la asignamos
